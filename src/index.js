@@ -14,7 +14,7 @@ function checksExistsUserAccount(request, response, next) {
   const user = users.find((user) => user.username === username);
   if (!user) return response.status(404).json({ erorr: "User not found" });
   request.user = user;
-  // next();
+  next();
 }
 
 function checksCreateTodosUserAvailability(request, response, next) {
